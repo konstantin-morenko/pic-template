@@ -42,5 +42,8 @@ ${RLS_DIR}/${OUTPREFIX}.main.hex: ${addprefix ${OBJDIR}/, ${OBJS}} | ${BLD_DIR} 
 ########################################
 # SPECIAL
 
-${RLS_DIR}/${OUTPREFIX}.main.hex: ${OBJS}
-	${XC8} ${XC8_FLAGS} --chip=${CHIP} -O$@ ${OBJS}
+clean:
+	rm ${BLD_DIR}/*
+	rmdir ${BLD_DIR}
+	rm ${RLS_DIR}/*
+	rmdir ${RLS_DIR}
