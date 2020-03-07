@@ -14,6 +14,7 @@ CHIP = 16F628A
 VER = 0.1.0
 OBJS = main.c isr.c confbits.c
 OUTPREFIX = ${PRJ_NAME}-${CHIP}-${VER}
+.DEFAULT_GOAL := all
 
 ########################################
 # DIRS
