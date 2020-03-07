@@ -12,24 +12,34 @@ XC8_FLAGS = ""
 PRJ_NAME = template
 CHIP = 16F628A
 VER = 0.1.0
-OBJS = src/main.c src/isr.c src/confbits.c
-RLS_DIR = releases
-
+OBJS = main.c isr.c confbits.c
 OUTPREFIX = ${PRJ_NAME}-${CHIP}-${VER}
 
-all: releases packages
+########################################
+# DIRS
+
+OBJDIR = src
+RLS_DIR = releases
+BLD_DIR = build
+
+${RLS_DIR}:
+	mkdir ${RLS_DIR}
+
+${BLD_DIR}:
+	mkdir ${BLD_DIR}
 
 
 ########################################
 # RELEASES
 
-releases: main
+all: ${addprefix ${RLS_DIR}/, ${OUTPREFIX}.main.hex}
 
-main: ${RLS_DIR}/${OUTPREFIX}.main.hex
-
+${RLS_DIR}/${OUTPREFIX}.main.hex: ${addprefix ${OBJDIR}/, ${OBJS}} | ${BLD_DIR} ${RLS_DIR}
+	${XC8} ${XC8_FLAGS} --chip=${CHIP} -O${BLD_DIR}/${@F} $^
+	mv ${BLD_DIR}/${@F} $@
 
 ########################################
-# FILES
+# SPECIAL
 
 ${RLS_DIR}/${OUTPREFIX}.main.hex: ${OBJS}
 	${XC8} ${XC8_FLAGS} --chip=${CHIP} -O$@ ${OBJS}
