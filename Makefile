@@ -12,7 +12,7 @@ XC8_FLAGS = ""
 PRJ_NAME = template
 CHIP = 16F628A
 VER = 0.1.0
-OBJS = main.c isr.c confbits.c
+OBJS = *.c
 OUTPREFIX = ${PRJ_NAME}-${CHIP}-${VER}
 .DEFAULT_GOAL := all
 
