@@ -33,9 +33,9 @@ ${BLD_DIR}:
 ########################################
 # RELEASES
 
-all: ${addprefix ${RLS_DIR}/, ${OUTPREFIX}.main.hex}
+all: ${addprefix ${RLS_DIR}/${OUTPREFIX}+, main.hex}
 
-${RLS_DIR}/${OUTPREFIX}.main.hex: ${addprefix ${OBJDIR}/, ${OBJS}} | ${BLD_DIR} ${RLS_DIR}
+${RLS_DIR}/${OUTPREFIX}+main.hex: ${addprefix ${OBJDIR}/, ${OBJS}} | ${BLD_DIR} ${RLS_DIR}
 	${XC8} ${XC8_FLAGS} --chip=${CHIP} -O${BLD_DIR}/${@F} $^
 	mv ${BLD_DIR}/${@F} $@
 
