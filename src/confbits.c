@@ -21,10 +21,10 @@
 /* Rules for setting my IdLoc */
 /* https://github.com/konstantin-morenko/my-pic-idloc */
 
-#pragma config IDLOC0 = 0
-#pragma config IDLOC1 = 0
-#pragma config IDLOC2 = 0
-#pragma config IDLOC3 = 0
+#pragma config IDLOC3 = 0x0
+#pragma config IDLOC2 = 0x0
+#pragma config IDLOC1 = 0x0
+#pragma config IDLOC0 = 0x0
 
 // #error IdLoc in __FILE__ is not set
 /* Revome this after configuring */
