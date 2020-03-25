@@ -1,6 +1,9 @@
 
 #include <xc.h>
 
+#include "defs.h"
+
+
 void __interrupt () isr(void) {
 
   /* Checking IE & IF according to http://ww1.microchip.com/downloads/en/DeviceDoc/52053B.pdf#page=190 */

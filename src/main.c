@@ -3,7 +3,11 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#include "defs.h"
+
+
 /* All standard definitions in /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h */
+
 
 void main(void) {
   /* ==================== INIT ==================== */
