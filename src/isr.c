@@ -9,7 +9,7 @@ void __interrupt () isr(void) {
     TMR0IF = 0;
   }
 
-#warning Interrupts in __FILE__ is not set
+#warning Interrupts is not set
   /* Revome this after configuring */
 
 }

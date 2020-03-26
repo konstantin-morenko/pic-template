@@ -13,7 +13,7 @@
 #pragma config CPD = OFF        // Data memory code protection off
 #pragma config CP = OFF         // Code protection off
 
-// #error Config in __FILE__ is not set
+#warning Config is not set
 /* Revome this after configuring */
 
 /* ==================== IDLOC ==================== */
@@ -26,5 +26,5 @@
 #pragma config IDLOC1 = 0x0
 #pragma config IDLOC0 = 0x0
 
-// #error IdLoc in __FILE__ is not set
+#warning IdLoc is not set
 /* Revome this after configuring */

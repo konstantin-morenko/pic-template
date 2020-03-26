@@ -8,13 +8,13 @@
 void main(void) {
   /* ==================== INIT ==================== */
 
-#warning Initialization in __FILE__ is not set
+#warning Initialization is not set
   /* Revome this after configuring */
 
   /* ==================== PROGRAM ==================== */
   while(1) {
 
-#warning Main program in __FILE__ is not set
+#warning Main program is not set
     /* Revome this after configuring */
 
   }
