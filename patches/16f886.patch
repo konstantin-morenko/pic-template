@@ -1,0 +1,41 @@
+diff --git a/Makefile b/Makefile
+index 91aedc3..47043a3 100644
+--- a/Makefile
++++ b/Makefile
+@@ -10,7 +10,7 @@ XC8_FLAGS = ""
+ # PROJECT
+ 
+ PRJ_NAME = template
+-CHIP = 16F628A
++CHIP = 16F886
+ VER = 0.1.0
+ OBJS = *.c
+ HDRS = *.h
+diff --git a/src/confbits.c b/src/confbits.c
+index a1554c8..d49925a 100644
+--- a/src/confbits.c
++++ b/src/confbits.c
+@@ -3,8 +3,8 @@
+ 
+ /* ==================== CONFIG ==================== */
+ 
+-/* /opt/microchip/xc8/v2.10/docs/chips/16f628a.html */
+-#pragma config FOSC = INTOSCIO  // INTOSC: I/O function on RA6/RA7
++/* /opt/microchip/xc8/v2.10/docs/chips/16f886.html */
++#pragma config FOSC = INTRC_NOCLKOUT  // INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN
+ #pragma config WDTE = OFF       // WDT disabled
+ #pragma config PWRTE = OFF      // PWRT disabled
+ #pragma config MCLRE = ON       // RA5/MCLR/VPP pin function is MCLR
+diff --git a/src/main.c b/src/main.c
+index f664f1a..7f74ea0 100755
+--- a/src/main.c
++++ b/src/main.c
+@@ -6,7 +6,7 @@
+ #include "defs.h"
+ 
+ 
+-/* All standard definitions in /opt/microchip/xc8/v2.10/pic/include/pic16f628a.h */
++/* All standard definitions in /opt/microchip/xc8/v2.10/pic/include/pic16f886.h */
+ 
+ 
+ inline void set_tmr0_int(void);
