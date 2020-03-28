@@ -27,7 +27,7 @@ index a1554c8..d49925a 100644
  #pragma config PWRTE = OFF      // PWRT disabled
  #pragma config MCLRE = ON       // RA5/MCLR/VPP pin function is MCLR
 diff --git a/src/main.c b/src/main.c
-index f664f1a..7f74ea0 100755
+index f664f1a..3851f09 100755
 --- a/src/main.c
 +++ b/src/main.c
 @@ -6,7 +6,7 @@
@@ -39,3 +39,20 @@ index f664f1a..7f74ea0 100755
  
  
  inline void set_tmr0_int(void);
+@@ -16,9 +16,16 @@ void main(void) {
+   /* ==================== INIT ==================== */
+ 
+   /* set_tmr0_int(); */
++
++  ANSEL = 0b00000;		/* PORTB */
++  ANSELH = 0b000000;		/* PORTC */
++  /* Turning off Analog Input by default */
++#warning ANSEL is turned off
++
+ #warning Initialization is not set
+   /* Revome this after configuring */
+ 
++
+   /* ==================== PROGRAM ==================== */
+   while(1) {
+ 
