@@ -13,6 +13,7 @@ PRJ_NAME = template
 CHIP = 16F628A
 VER = 0.1.0
 OBJS = *.c
+HDRS = *.h
 OUT_PREFIX = ${PRJ_NAME}-${CHIP}-${VER}
 .DEFAULT_GOAL := all
 
@@ -35,8 +36,8 @@ ${BLD_DIR}:
 
 all: ${addprefix ${RLS_DIR}/${OUT_PREFIX}+, main.hex}
 
-${RLS_DIR}/${OUT_PREFIX}+main.hex: ${addprefix ${OBJ_DIR}/, ${OBJS}} | ${BLD_DIR} ${RLS_DIR}
-	${XC8} ${XC8_FLAGS} --chip=${CHIP} -O${BLD_DIR}/${@F} $^
+${RLS_DIR}/${OUT_PREFIX}+main.hex: ${addprefix ${OBJ_DIR}/, ${OBJS}} ${addprefix ${OBJ_DIR}/, ${HDRS}} | ${BLD_DIR} ${RLS_DIR}
+	${XC8} ${XC8_FLAGS} --chip=${CHIP} -O${BLD_DIR}/${@F} ${addprefix ${OBJ_DIR}/, ${OBJS}}
 	mv ${BLD_DIR}/${@F} $@
 
 ########################################
