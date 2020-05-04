@@ -27,7 +27,7 @@ index a1554c8..d49925a 100644
  #pragma config PWRTE = OFF      // PWRT disabled
  #pragma config MCLRE = ON       // RA5/MCLR/VPP pin function is MCLR
 diff --git a/src/main.c b/src/main.c
-index f664f1a..3851f09 100755
+index f664f1a..3851f09 100644
 --- a/src/main.c
 +++ b/src/main.c
 @@ -6,7 +6,7 @@
